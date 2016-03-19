@@ -11,18 +11,33 @@ public class Valuta {
 		return nazivValute;
 	}
 	public void setNazivValute(String nazivValute) {
+		if(nazivValute == null){
+			throw new RuntimeException("Naziv valute ne sme biti null!");
+		}
+		if(nazivValute.isEmpty()){
+			throw new RuntimeException("Naziv ne sme biti prazan string!");
+		}
 		this.nazivValute = nazivValute;
 	}
 	public String getSkraceniNazivValute() {
 		return skraceniNazivValute;
 	}
 	public void setSkraceniNazivValute(String skraceniNazivValute) {
+		if(skraceniNazivValute == null){
+			throw new RuntimeException("Skraceni naziv valute ne sme biti null!");
+		}
+		if(skraceniNazivValute.isEmpty()){
+			throw new RuntimeException("Skraceni naziv ne sme biti prazan string!");
+		}
 		this.skraceniNazivValute = skraceniNazivValute;
 	}
 	public List<Kurs> getKursevi() {
 		return kursevi;
 	}
 	public void setKursevi(List<Kurs> kursevi) {
+		if(kursevi == null){
+			throw new RuntimeException("Lista kurseva ne sme biti null!");
+		}
 		this.kursevi = kursevi;
 	}
 	

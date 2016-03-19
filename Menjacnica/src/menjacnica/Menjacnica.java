@@ -10,6 +10,9 @@ public class Menjacnica {
 	}
 
 	public void setValute(List<Valuta> valute) {
+		if(valute == null){
+			throw new NullPointerException("Lista valuta ne sme biti null!");
+		}
 		this.valute = valute;
 	}
 
