@@ -13,5 +13,11 @@ public class Menjacnica {
 		this.valute = valute;
 	}
 
+	@Override
+	public String toString() {
+		return "Menjacnica (Valute): " + valute;
+	}
+
+	
 	
 }
