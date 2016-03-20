@@ -23,11 +23,19 @@ public class MenjacnicaImplementacija implements MenjacnicaInterfejs {
 	}
 
 	@Override
-	public void obrisiKursValute(Valuta valuta, Kurs kurs) {
-		if(!valuta.getKursevi().contains(kurs)){
-				throw new RuntimeException("Taj kurs ne postoji!");
+	public void obrisiKursValute(Valuta valuta, GregorianCalendar datum) {
+		for(int i = 0; i < valuta.getKursevi().size(); i++){
+			Kurs k = valuta.getKursevi().get(i);
+			GregorianCalendar datumKursa = k.getDatumKursa();
+			if(datum.get(GregorianCalendar.DAY_OF_MONTH) == datumKursa.get(GregorianCalendar.DAY_OF_MONTH) &&
+					datum.get(GregorianCalendar.MONTH) == datumKursa.get(GregorianCalendar.MONTH) &&
+					datum.get(GregorianCalendar.YEAR) == datumKursa.get(GregorianCalendar.YEAR)){
+				System.out.println("Obrisan kurs za prosledjen datum.");
+				valuta.getKursevi().remove(k);
+				return;
 			}
-		valuta.getKursevi().remove(kurs);
+		}
+		System.out.println("Ne postoji kurs za prosledjen datum!");
 	}
 
 	@Override
