@@ -1,9 +1,18 @@
 package menjacnica;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Menjacnica {
 	private List<Valuta> valute;
+	
+	public Menjacnica(List<Valuta> valute) {
+		this.valute = valute;
+	}
+
+	public Menjacnica(){
+		valute = new LinkedList<>();
+	}
 
 	public List<Valuta> getValute() {
 		return valute;
